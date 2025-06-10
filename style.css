@@ -1,0 +1,54 @@
+/* Hide the nav menu by default on mobile */
+header nav {
+    display: none;
+}
+
+/* Show the nav menu when active */
+header nav.mobile-menu-active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 40;
+    padding: 1rem;
+}
+
+/* Style the nav links for mobile */
+header nav.mobile-menu-active ul {
+    flex-direction: column;
+    space-y-4
+}
+
+header nav.mobile-menu-active ul li {
+    margin: 0;
+}
+
+header nav.mobile-menu-active ul li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 1.125rem;
+    color: #111827;
+}
+
+header nav.mobile-menu-active ul li a:hover {
+    color: #0056b3;
+}
+
+/* Ensure the desktop menu is unaffected */
+@media (min-width: 1024px) {
+    header nav {
+        display: block !important;
+    }
+    header nav.mobile-menu-active {
+        position: static;
+        box-shadow: none;
+        padding: 0;
+    }
+    header nav.mobile-menu-active ul {
+        flex-direction: row;
+        space-y-0;
+    }
+}

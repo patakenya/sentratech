@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
         tailwind.config = {
@@ -357,5 +358,40 @@
             <i class="ri-whatsapp-line text-3xl"></i>
         </div>
     </a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const menuButton = document.querySelector('header button.lg\\:hidden');
+    const navMenu = document.querySelector('header nav');
+    const menuIcon = menuButton.querySelector('i');
+
+    menuButton.addEventListener('click', function () {
+        // Toggle the 'hidden' class to show/hide the menu
+        navMenu.classList.toggle('hidden');
+
+        // Toggle between hamburger and close icons
+        if (navMenu.classList.contains('hidden')) {
+            menuIcon.classList.remove('ri-close-line');
+            menuIcon.classList.add('ri-menu-line');
+        } else {
+            menuIcon.classList.remove('ri-menu-line');
+            menuIcon.classList.add('ri-close-line');
+        }
+
+        // Optional: Add a class to make the menu visible with styling
+        navMenu.classList.toggle('mobile-menu-active');
+    });
+
+    // Close the menu when a link is clicked (optional)
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            navMenu.classList.add('hidden');
+            menuIcon.classList.remove('ri-close-line');
+            menuIcon.classList.add('ri-menu-line');
+            navMenu.classList.remove('mobile-menu-active');
+        });
+    });
+});
+    </script>
 </body>
 </html>
