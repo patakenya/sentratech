@@ -16,23 +16,33 @@ header nav.mobile-menu-active {
     padding: 1rem;
 }
 
-/* Style the nav links for mobile */
+/* Style the nav list for mobile */
 header nav.mobile-menu-active ul {
+    display: flex;
     flex-direction: column;
-    space-y-4
+    gap: 1rem; /* Consistent spacing between links */
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Remove default list styling */
 }
 
+/* Style individual nav items for mobile */
 header nav.mobile-menu-active ul li {
     margin: 0;
+    padding: 0;
 }
 
+/* Style nav links for mobile */
 header nav.mobile-menu-active ul li a {
     display: block;
     padding: 0.5rem 1rem;
     font-size: 1.125rem;
     color: #111827;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+/* Hover effect for nav links */
 header nav.mobile-menu-active ul li a:hover {
     color: #0056b3;
 }
@@ -49,6 +59,15 @@ header nav.mobile-menu-active ul li a:hover {
     }
     header nav.mobile-menu-active ul {
         flex-direction: row;
-        space-y-0;
+        gap: 2rem; /* Match desktop spacing */
+        margin: 0;
+        padding: 0;
+    }
+    header nav.mobile-menu-active ul li {
+        margin: 0;
+    }
+    header nav.mobile-menu-active ul li a {
+        padding: 0;
+        font-size: 1rem;
     }
 }
